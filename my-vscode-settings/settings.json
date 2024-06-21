@@ -2,8 +2,8 @@
     //! Editor settings */
     //* Editor */
     "editor.fontSize": 13,
-    "editor.fontFamily": "Menlo, Monaco, Consolas, 'Courier New', 'Microsoft YaHei Mono', monospace, 'DejaVuSansM Nerd Font Mono'",
-    "editor.fontWeight": 600,
+    "editor.fontFamily": "'NF Bold Italic'",
+    // "editor.fontWeight": "bold",
     "editor.tabSize": 4,
     "editor.insertSpaces": true,
     "editor.lineNumbers": "on",
@@ -33,19 +33,18 @@
     "editor.cursorSmoothCaretAnimation": "explicit",
     "editor.smoothScrolling": true,
     "editor.mouseWheelZoom": false,
-    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.multiCursorModifier": "alt",
     "editor.occurrencesHighlight": "singleFile",
     "editor.selectionHighlight": true,
     "editor.parameterHints.enabled": true,
     "editor.matchBrackets": "always",
     "editor.links": true,
-    "editor.minimap.enabled": true,
+    "editor.minimap.enabled": false,
     "editor.minimap.maxColumn": 120,
     "editor.minimap.renderCharacters": true,
     "editor.minimap.size": "proportional",
     "editor.formatOnType": true,
     "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "modifications",
     "editor.inlineSuggest.enabled": true,
     "editor.suggestSelection": "first",
@@ -56,13 +55,11 @@
         "comments": true,
         "strings": true
     },
-    "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.renderIndicators": true,
     "diffEditor.renderSideBySide": true,
-    "workbench.colorTheme": "Monokai",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.startupEditor": "none",
-    "workbench.sideBar.location": "left",
+    "workbench.colorTheme": "One Monokai",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.startupEditor": "welcomePage",
     "workbench.enableExperiments": false,
     "workbench.editor.showIcons": true,
     "workbench.editor.showTabs": "multiple",
@@ -70,7 +67,6 @@
     "workbench.editor.closeOnFileDelete": false,
     "workbench.editor.enablePreview": true,
     "workbench.editor.highlightModifiedTabs": true,
-    "workbench.fontAliasing": "auto",
     "workbench.settings.editor": "ui",
     "workbench.settings.useSplitJSON": true,
     "workbench.colorCustomizations": {
@@ -85,7 +81,6 @@
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
-    "workbench.editorLargeFileConfirmation": 64,
     "workbench.localHistory.enabled": true,
     "workbench.localHistory.maxFileSize": 1024,
     "workbench.localHistory.mergeWindow": 60,
@@ -163,34 +158,19 @@
     //* Integrated Terminal */
     "terminal.explorerKind": "integrated",
     "terminal.integrated.fontSize": 14,
-    "terminal.integrated.fontFamily": "'DejaVuSansM Nerd Font Mono', 'DejaVuSansM NFM', Menlo, 'Microsoft YaHei Mono'",
+    "terminal.integrated.fontFamily": "'NF Bold Italic'",
+    "terminal.integrated.fontWeight": "bold",
     "terminal.integrated.tabs.enabled": true,
     "terminal.integrated.showExitAlert": true,
     "terminal.integrated.confirmOnExit": "hasChildProcesses",
     "terminal.integrated.sendKeybindingsToShell": true,
     "terminal.integrated.cursorBlinking": true,
-    "terminal.integrated.enableVisualBell": true,
-    "terminal.integrated.cursorStyle": "block",
-    "terminal.integrated.enableImages": true,
-    "terminal.integrated.inheritEnv": false,
+    "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.scrollback": 100000,
     "terminal.integrated.detectLocale": "auto",
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.defaultProfile.windows": "PowerShell",
-    "terminal.integrated.profiles.linux": {
-        "zsh": {
-            "path": "/usr/bin/zsh"
-        }
-    },
-    "terminal.integrated.profiles.osx": {
-        "zsh": {
-            "path": "/bin/zsh",
-            "args": [
-                "-l"
-            ]
-        }
-    },
 
     //* External Terminal */
     "terminal.external.linuxExec": "x-terminal-emulator",
@@ -284,12 +264,8 @@
     //* Better Comments */
     "better-comments.highlightPlainText": true,
     "better-comments.multilineComments": true,
-
-    //* C/C++ */
-    "C_Cpp.default.compilerPath": "gcc",
     "C_Cpp.default.cppStandard": "c++20",
     "C_Cpp.default.cStandard": "c11",
-    "C_Cpp.default.intelliSenseMode": "gcc-x64",
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "C_Cpp.intelliSenseEngine": "Default",
     "C_Cpp.configurationWarnings": "Enabled",
@@ -323,6 +299,7 @@
     "clangd.detectExtensionConflicts": false,
 
     //* Cmake Tools */
+    "cmake.cmakePath": "cmake",
     "cmake.preferredGenerators": [
         "Unix Makefiles",
         "Ninja"
@@ -903,11 +880,23 @@
     "python.analysis.autoSearchPaths": true,
     "python.analysis.completeFunctionParens": true,
     "python.analysis.useLibraryCodeForTypes": true,
-    "python.defaultInterpreterPath": "python3",
-    "python.terminal.activateEnvironment": false,
+    "python.terminal.activateEnvironment": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
     "python.languageServer": "Pylance",
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--safe",
+        "--line-length=100",
+        "--skip-string-normalization"
+    ],
+    // "python.linting.enabled": true,
+    // "python.linting.lintOnSave": true,
+    // "python.linting.pylintEnabled": true,
+    // "python.linting.pylintArgs": [
+    //     "--generated-members=numpy.*,torch.*",
+    //     "--max-line-length=120"
+    // ],
     "jupyter.interactiveWindow.cellMarker.default": "# %%",
-    "jupyter.debugJustMyCode": false,
     "notebook.lineNumbers": "on",
     "notebook.cellToolbarVisibility": "hover",
     "notebook.showFoldingControls": "always",
@@ -946,7 +935,6 @@
     "remote.extensionKind": {
         "ms-azuretools.vscode-docker": "workspace"
     },
-    "remote.SSH.connectTimeout": 300,
     "remote.SSH.defaultExtensions": [
         "ms-ceintl.vscode-language-pack-zh-hans",
         "formulahendry.code-runner",
@@ -967,8 +955,6 @@
     //* reStructuredText */
     "restructuredtext.languageServer.disabled": true,
     "esbonio.server.enabled": false,
-
-    //* Shellcheck */
     "shellcheck.enable": true,
     "shellcheck.enableQuickFix": true,
     "shellcheck.run": "onSave",
@@ -999,9 +985,6 @@
         }
     ],
 
-    //* Tabnine */
-    "tabnine.experimentalAutoImports": true,
-
     //* Todo Tree */
     "todo-tree.general.tags": [
         "BUG",
@@ -1020,4 +1003,73 @@
     "vsintellicode.java.completionsEnabled": true,
     "vsintellicode.typescript.completionsEnabled": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": true,
+        "scminput": false,
+        "json": false
+    },
+    "tabnine.experimentalAutoImports": true,
+    "cSpell.userWords": [
+        "addlicense",
+        "Ruiyang",
+        "swiftlint"
+    ],
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "accessibility.signals.terminalBell": {
+        "sound": "on"
+    },
+    "terminal.integrated.enableVisualBell": true,
+    "diffEditor.codeLens": true,
+    "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+    "lldb.launch.expressions": "native",
+    "leetcode.endpoint": "leetcode-cn",
+    "leetcode.workspaceFolder": "/Users/ruiyangsun/.leetcode",
+    "leetcode.defaultLanguage": "swift",
+    "leetcode.hint.commandShortcut": false,
+    "leetcode.hint.configWebviewMarkdown": false,
+    "swiftlint.path": [
+        "/opt/homebrew/bin/swiftlint"
+    ],
+    "swiftformat.path": [
+        "/opt/homebrew/bin/swiftformat",
+    ],
+    "swiftlint.configSearchPaths": [
+        "./.swiftlint.yaml"
+    ],
+    "cmake.configureOnOpen": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "github.copilot.editor.enableAutoCompletions": true,
+    "projectManager.git.baseFolders": [
+        "~/Projects"
+    ],
+    "[swift]": {
+        "editor.defaultFormatter": "vknabel.vscode-swiftformat"
+    },
+    "swift.debugger.useDebugAdapterFromToolchain": true,
+    "swift.debugger.path": "/Applications/Xcode-beta.app/Contents/Developer/usr/bin/lldb",
+    "vscode-openai.serviceProvider": "OpenAI",
+    "vscode-openai.baseUrl": "https://api.openai.com/v1",
+    "vscode-openai.defaultModel": "gpt-4o-2024-05-13",
+    "vscode-openai.azureDeployment": "setup-required",
+    "vscode-openai.scmModel": "gpt-4o-2024-05-13",
+    "vscode-openai.scmDeployment": "setup-required",
+    "vscode-openai.embeddingModel": "text-embedding-ada-002",
+    "vscode-openai.embeddingsDeployment": "setup-required",
+    "vscode-openai.azureApiVersion": "2024-02-01",
+    "vscode-openai.conversation-configuration.temperature": 0.7,
+    "vscode-openai.conversation-configuration.history": 100
+    // "swift.sourcekit-lsp.serverArguments": [
+    //     "-Xswiftc",
+    //     "-sdk",
+    //     "-Xswiftc",
+    //     "/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.0.sdk",
+    //     "-Xswiftc",
+    //     "-target",
+    //     "-Xswiftc",
+    //     "x86_64-apple-ios18.0-simulator"
+    // ]
 }

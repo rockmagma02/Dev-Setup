@@ -244,6 +244,8 @@ exec_cmd 'brew install bash-completion wget curl git git-lfs macvim tmux'
 exec_cmd 'brew install coreutils ranger fd bat highlight ripgrep git-extras'
 exec_cmd 'brew install jq shfmt shellcheck diffutils colordiff diff-so-fancy'
 exec_cmd 'brew install htop openssh atool tree reattach-to-user-namespace libarchive'
+exec_cmd 'brew install swiftformat swiftlint swiftenv'
+exec_cmd 'brew install pre-commit'
 
 exec_cmd 'brew install ruby perl'
 export PATH="${HOMEBREW_PREFIX}/opt/ruby/bin${PATH:+:"${PATH}"}"
@@ -254,7 +256,15 @@ export PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin${PATH:+:"${PATH}"}"
 exec_cmd 'brew install --cask iterm2 xquartz'
 exec_cmd 'brew install --cask font-dejavu-sans-mono-nerd-font font-cascadia{-code,-mono}{,-pl}'
 exec_cmd 'brew install --cask visual-studio-code'
-exec_cmd 'brew install --cask keka typora iina google-chrome'
+exec_cmd 'brew install --cask aldente'
+exec_cmd 'brew install --cask papers'
+exec_cmd 'brew install --cask bob'
+exec_cmd 'brew install --cask popclip'
+exec_cmd 'brew install --cask copilot-for-xcode'
+exec_cmd 'brew install --cask swiftformat-for-xcode'
+exec_cmd 'brew install --cask miniconda'
+exec_cmd 'brew install --cask wechat'
+exec_cmd 'brew install --cask typora iina'
 
 exec_cmd 'brew cleanup -s --prune 7'
 
@@ -811,6 +821,7 @@ plugins=(
 	tmux
 	brew
 	vscode
+	swiftpm
 )
 
 ZSH_COLORIZE_STYLE="monokai"
@@ -854,6 +865,10 @@ alias lsa='ls -A'
 alias l='ls -alh'
 alias ll='ls -lh'
 alias la='ls -Alh'
+alias glg1="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all"
+alias glg2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'"
+alias glg="glg1"
+alias swlint="swiftformat . --verbose && swiftlint --config ./.swiftlint.yaml"
 
 if [[ -z "${P10K_LEAN_STYLE}" ]]; then
 	# Setup Color LS

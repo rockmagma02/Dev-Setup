@@ -388,6 +388,7 @@ plugins=(
 	tmux
 	brew
 	vscode
+	swiftpm
 )
 
 ZSH_COLORIZE_STYLE="monokai"
@@ -431,6 +432,10 @@ alias lsa='ls -A'
 alias l='ls -alh'
 alias ll='ls -lh'
 alias la='ls -Alh'
+alias glg1="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all"
+alias glg2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'"
+alias glg="glg1"
+alias swlint="swiftformat . --verbose && swiftlint --config ./.swiftlint.yaml"
 
 if [[ -z "${P10K_LEAN_STYLE}" ]]; then
 	# Setup Color LS
